@@ -9,7 +9,7 @@ The transformer is a Maskinporten-secured REST API that transforms both structur
 
 For now, see https://digdir.atlassian.net/wiki/spaces/~6205262fa29402006879a50f/pages/edit-v2/2939977762 for further information
 
-# Local installation
+## Local installation
 
 1. Clone the repo
 2. Navigate to the project directory
