@@ -17,3 +17,9 @@ For now, see https://digdir.atlassian.net/wiki/spaces/~6205262fa29402006879a50f/
 4. Run the application (`dotnet run`)
 
 See `altinn-transformer.http` for an example request
+
+## TODO
+
+* Add Maskinporten authentication
+* Determine how identifier lookups should work (API calls? Direct access to register database/sbl bridge?)
+* Deployment (authorization cluster?)
