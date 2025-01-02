@@ -1,6 +1,17 @@
-@altinn_transformer_HostAddress = http://localhost:5228
+@altinn_transformer_HostAddress = https://localhost:7157
 
-GET {{altinn_transformer_HostAddress}}/weatherforecast/
+POST {{altinn_transformer_HostAddress}}/transform/
 Accept: application/json
+Content-Type: application/json
 
-###
+{
+  "inputType": "urn:altinn:raw-value",
+  "inputValue": 12345678,
+  "requestedOutputType": "urn:altinn:secured-data",
+  "securitySettings": {
+    "requiresOrgNo": [
+      "912345678"
+    ]
+  }
+}
+

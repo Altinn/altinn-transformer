@@ -8,7 +8,7 @@ namespace Altinn.Transformer.Services;
 
 public class TransformerService : ITransformerService
 {
-    private const string CurrentKeyId = "20241219";
+    private const string CurrentKeyId = "20250102";
     
     private readonly IEncryptionService _encryptionService;
     private readonly IKeyResolverService _keyResolverService;
