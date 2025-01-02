@@ -8,3 +8,12 @@ The transformer is a Maskinporten-secured REST API that transforms both structur
 **This is a initial PoC, only implementing the encryption/decryption mechanism.**
 
 For now, see https://digdir.atlassian.net/wiki/spaces/~6205262fa29402006879a50f/pages/edit-v2/2939977762 for further information
+
+# Local installation
+
+1. Clone the repo
+2. Navigate to the project directory
+3. Set up an encryption key: `dotnet user-secrets set "TransformerConfig:EncryptionKeys" "20250102:$(head -c 32 /dev/urandom | base64)"`
+4. Run the application (`dotnet run`)
+
+See `altinn-transformer.http` for an example request
