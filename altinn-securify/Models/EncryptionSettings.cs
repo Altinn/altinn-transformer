@@ -1,6 +1,6 @@
-namespace Altinn.Transformer.Models;
+namespace Altinn.Securify.Models;
 
-public class SecuritySettings
+public class EncryptionSettings
 {
     public DateTimeOffset ExpiresAt { get; set; }
     public List<string>? RequiresOrgNo { get; set; }

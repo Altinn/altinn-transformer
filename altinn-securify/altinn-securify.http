@@ -1,0 +1,24 @@
+@HostAddress = https://localhost:7157
+
+### Encrypt
+POST {{HostAddress}}/encrypt
+Accept: application/json
+Content-Type: application/json
+
+{
+  "plaintext": "this is a secret message",
+  "settings": {
+    "requiresOrgNo": [
+      "912345678"
+    ]
+  }
+}
+
+### Decrypt
+POST {{HostAddress}}/decrypt
+Accept: application/json
+Content-Type: application/json
+
+{
+  "ciphertext": "as_AQgyMDI1MDEwMgFNc79HOKOqOl8SlQwBnCxpvGx9U337DOp6HO4gDkyIMiGVFI-5-Igy3hb8Uw80jLC8Nkc1rqtKLx7KvhT7p35JCTtMEnUkIBmJUn32eH_tU6Wge3Z-yRscF20CTD5RA8E6MOvpg1dxUHiJhRssla7QdRMPin-ZBPG9r5cPo0BW9k0qMO_Blxdy8zvpVl4pA8E7RfAKwNEMTv-hjFd5xV1eqkpx6KMjAzdThge1bzAcRUUOUW8z8uHUfQp7PD_pjdYk"
+}

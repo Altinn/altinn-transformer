@@ -1,4 +1,4 @@
-namespace Altinn.Transformer.Services.Interfaces;
+namespace Altinn.Securify.Services.Interfaces;
 
 public interface IKeyResolverService
 {

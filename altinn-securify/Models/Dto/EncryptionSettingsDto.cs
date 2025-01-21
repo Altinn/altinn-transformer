@@ -1,9 +1,9 @@
 using System.Text.RegularExpressions;
-using Altinn.Transformer.Configuration;
+using Altinn.Securify.Configuration;
 
-namespace Altinn.Transformer.Models.Dto;
+namespace Altinn.Securify.Models.Dto;
 
-public partial class SecuritySettingsDto
+public partial class EncryptionSettingsDto
 {
     public DateTimeOffset? ExpiresAt { get; set; }
     public List<string>? RequiresOrgNo { get; set; }
@@ -15,13 +15,13 @@ public partial class SecuritySettingsDto
     [GeneratedRegex(ValidNorwegianOrgNoPattern)]
     private static partial Regex ValidNorwegianOrgNoRegex();
     
-    public List<string> Validate(TransformerConfig transformerConfig)
+    public List<string> Validate(SecurifyConfig securifyConfig)
     {
         var errors = new List<string>();
 
-        if (ExpiresAt.HasValue && (ExpiresAt <= DateTimeOffset.UtcNow || ExpiresAt >= DateTimeOffset.UtcNow.Add(transformerConfig.MaxSecuredDataLifeTime)))
+        if (ExpiresAt.HasValue && (ExpiresAt <= DateTimeOffset.UtcNow || ExpiresAt >= DateTimeOffset.UtcNow.Add(securifyConfig.MaxLifeTime)))
         {
-            errors.Add($"ExpiresAt must be within {transformerConfig.MaxSecuredDataLifeTime.TotalSeconds} seconds in the future.");
+            errors.Add($"ExpiresAt must be within {securifyConfig.MaxLifeTime.TotalSeconds} seconds in the future.");
         }
         
         if (RequiresOrgNo != null && RequiresOrgNo.Count != 0)
@@ -33,11 +33,11 @@ public partial class SecuritySettingsDto
         return errors;
     }
 
-    public SecuritySettings ToSecuritySettings(TransformerConfig transformerConfig)
+    public EncryptionSettings ToEncryptionSettings(SecurifyConfig securifyConfig)
     {
-        return new SecuritySettings
+        return new EncryptionSettings
         {
-            ExpiresAt = ExpiresAt ?? DateTimeOffset.UtcNow.Add(transformerConfig.DefaultSecuredDataLifeTime),
+            ExpiresAt = ExpiresAt ?? DateTimeOffset.UtcNow.Add(securifyConfig.DefaultLifeTime),
             RequiresOrgNo = RequiresOrgNo ?? [],
             RequiresClientId = RequiresClientId ?? [],
             RequiresScope = RequiresScope ?? []

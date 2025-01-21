@@ -1,7 +1,7 @@
 using System.Security.Cryptography;
-using Altinn.Transformer.Services.Interfaces;
+using Altinn.Securify.Services.Interfaces;
 
-namespace Altinn.Transformer.Services;
+namespace Altinn.Securify.Services;
 
 /// <summary>
 /// Provides methods for encrypting and decrypting data using AES-GCM with key rotation support.

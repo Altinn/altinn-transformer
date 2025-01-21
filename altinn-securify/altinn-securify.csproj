@@ -4,8 +4,9 @@
         <TargetFramework>net9.0</TargetFramework>
         <Nullable>enable</Nullable>
         <ImplicitUsings>enable</ImplicitUsings>
-        <RootNamespace>Altinn.Transformer</RootNamespace>
+        <RootNamespace>Altinn.Securify</RootNamespace>
       <UserSecretsId>56e58508-77e0-4134-bb20-28b0d4f795f9</UserSecretsId>
+      <AssemblyName>altinn-securify</AssemblyName>
   </PropertyGroup>
 
     <ItemGroup>

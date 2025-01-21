@@ -1,16 +1,16 @@
-using Altinn.Transformer.Configuration;
-using Altinn.Transformer.Services.Interfaces;
+using Altinn.Securify.Configuration;
+using Altinn.Securify.Services.Interfaces;
 using Microsoft.Extensions.Options;
 
-namespace Altinn.Transformer.Services;
+namespace Altinn.Securify.Services;
 
 public class SettingsBasedKeyResolverService : IKeyResolverService
 {
     private readonly Dictionary<string, byte[]> _keyStore;
 
-    public SettingsBasedKeyResolverService(IOptions<TransformerConfig> transformerConfig)
+    public SettingsBasedKeyResolverService(IOptions<SecurifyConfig> securifyConfig)
     {
-        _keyStore = transformerConfig.Value.EncryptionKeys.Split(',', StringSplitOptions.RemoveEmptyEntries)
+        _keyStore = securifyConfig.Value.EncryptionKeys.Split(',', StringSplitOptions.RemoveEmptyEntries)
             .Select(pair => pair.Split(':'))
             .ToDictionary(parts => parts[0], parts => Convert.FromBase64String(parts[1]));
     }
