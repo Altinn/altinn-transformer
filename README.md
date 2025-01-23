@@ -1,5 +1,7 @@
 # Altinn Securify
 
+> NOTE! This is work-in-progress PoC, and not released/supported in any way at this time
+
 The transformer is a Maskinporten-secured REST API that allows authorized parties to create secure (encrypted) representations of any plaintext small string (<2KB), and control which parties are allowed to decrypt it using the same API.
 
 The principal application is transferring sensitive data (session information, personal identifiers, etc.) in URLs as query params, where the data must be protected from tampering and unauthorized access and storage in eg. access logs.
@@ -82,5 +84,4 @@ The API is secured using [Maskinporten](https://docs.digdir.no/docs/Maskinporten
 
 ## TODO
 
-* Determine how identifier lookups should work (API calls? Direct access to register database/sbl bridge?)
 * Deployment (authorization cluster?)
