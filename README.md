@@ -67,7 +67,7 @@ Along the nonce and authentication tag, a key ID is also embedded. This allows f
 
 ## Security settings
 
-When requesting secured-data, additional metadata can be supplied that adds restrictions to consumers wanting to exchange the encrypted data back to its plain text representations. If any of the restrictions is not met, the API will refuse to return the decrypted plaintext and will instead produce an error.
+When encrypting data, additional metadata can be supplied that adds restrictions to consumers wanting to exchange the encrypted data back to its plain text representations. If any of the restrictions is not met, the API will refuse to return the decrypted plaintext and will instead produce an error.
 
 By default, no restrictions are added except for a expiry time, which is capped at 20 minutes. This is to discourage persisting secured-data, which will potentially break as keys will be rotated.
 
