@@ -82,6 +82,5 @@ The API is secured using [Maskinporten](https://docs.digdir.no/docs/Maskinporten
 
 ## TODO
 
-* Add Maskinporten authentication
 * Determine how identifier lookups should work (API calls? Direct access to register database/sbl bridge?)
 * Deployment (authorization cluster?)
